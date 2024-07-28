@@ -47,11 +47,11 @@
             <div class="input-section">
               <div>
                 <label for="first-name">FIRST NAME</label>
-                <input type="text" name="first_name" id="first-name" required />
+                <input type="text" name="first-name" id="first-name" required />
               </div>
               <div>
-                <label for="las-_name">LAST NAME</label>
-                <input type="text" name="last_name" id="last-name" required />
+                <label for="last-name">LAST NAME</label>
+                <input type="text" name="last-name" id="last-name" required />
               </div>
               <div>
                 <label for="email">EMAIL</label>
@@ -93,12 +93,14 @@
   <script>
     const form = document.getElementById('signup-form');
     form.addEventListener('submit', (e) => {
-      const password = document.getElementById('password').value;
-      const confirmPassword = document.getElementById('confirm-password').value;
+      const password = document.getElementById('password');
+      const confirmPassword = document.getElementById('confirm-password');
 
-      if (password !== confirmPassword) {
+      if (password.value !== confirmPassword.value) {
         const passwordError = document.getElementById('password-error');
         passwordError.style.display = 'inline-block';
+        password.style.borderColor = 'red';
+        confirmPassword.style.borderColor = 'red';
         e.preventDefault();
       }
     });

@@ -31,11 +31,6 @@ button:hover {
   cursor: pointer;
 }
 
-input:invalid {
-  border-color: blue;
-  outline: blue;
-}
-
 .title-section {
   flex: 1;
   display: flex;
