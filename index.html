@@ -1,63 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Project: Sign-Up Form</title>
-	<link rel="stylesheet" href="styles.css">
-	<script src="script.js"></script>
-</head>
-<body>
-	<div class="container">
-		<div class="left">
-			<h1><img src="images/odin-lined.png" alt="A fern.">ODIN</h1>
-			<div>Photo by 
-				<a href="https://unsplash.com/@haliewestphoto?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Halie West</a> on 
-				<a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-			</div>
-		</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup Form</title>
+  </head>
+  <link rel="stylesheet" href="styles.css" />
+  <body>
+    <main>
+      <div class="title-section">
+        <div>
+          <div class="frame">
+            <img
+              class="logo"
+              src="https://cdn.statically.io/gh/TheOdinProject/curriculum/5f37d43908ef92499e95a9b90fc3cc291a95014c/html_css/project-sign-up-form/odin-lined.png"
+            /><span>Odin</span>
+          </div>
+        </div>
+        <div>
+          <span>Photo by </span>
+          <a
+            href="https://unsplash.com/photos/green-leaf-plant-in-close-up-photography-25xggax4bSA"
+            >Halie West</a
+          >
+          <span> on </span>
+          <a href="https://unsplash.com/">Unsplash</a>
+        </div>
+      </div>
+      <div class="signup-section">
+        <div class="description">
+          <div>
+            This is not a real online service! You know you need something like
+            this in your life to help you realize your deepest dreams.
 
-		<div class="right">
-			<ul>
-				<li class="top">
-					<p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up <em>now</em> to get started.</p>
-					<p>You <em>know</em> you want to.</p>
-				</li>
-				<li class="mid">	
-					<p>Let's do this!</p>
-					<form>
-						<div>
-							<label for="fname">FIRST NAME</label><br>
-  						<input type="text" id="fname" name="fname">
-						</div>
-						<div>
-							<label for="lname">LAST NAME</label><br>
-							<input type="text" id="lname" name="lname">
-						</div>
-						<div></div>
-						<div>
-							<label for="email">EMAIL ADDRESS</label><br>
-							<input type="email" id="email" name="email">
-						</div>
-						<div>
-							<label for="phonenumber">PHONE NUMBER</label><br>
-							<input type="number" id="phonenumber" name="phonenumber">
-						</div>
-						<div></div>
-						<div>
-							<label for="password">PASSWORD</label><br>
-							<input type="password" id="password" name="password">
-						</div>
-						<div>
-							<label for="confirm_password">CONFIRM PASSWORD</label><br>
-							<input type="password" id="confirm_password" name="confirm_password">
-						</div>
-					</form>
-				</li>
-				<li class="bottom">
-					<button id="btn_createAccount">Create Account</button>
-					<p>Already have an account? <a href="index.html">Log in</a></p>
-				</li>
-		</div>
-	</div>
-</body>
+            <div>
+              Sign up
+              <i>now</i>
+              to get started.
+            </div>
+          </div>
+          <div>You <i>know</i> you want to.</div>
+        </div>
+        <form id="signup-form">
+          <div>
+            <div class="title">Let's do this!</div>
+            <div class="input-section">
+              <div>
+                <label for="first-name">FIRST NAME</label>
+                <input type="text" name="first_name" id="first-name" required />
+              </div>
+              <div>
+                <label for="las-_name">LAST NAME</label>
+                <input type="text" name="last_name" id="last-name" required />
+              </div>
+              <div>
+                <label for="email">EMAIL</label>
+                <input type="email" name="email" id="email" />
+              </div>
+              <div>
+                <label for="phone">PHONE</label>
+                <input type="tel" name="phone" id="phone" />
+              </div>
+              <div>
+                <label for="password">PASSWORD</label>
+                <input type="password" name="password" id="password" />
+                <div class="password-error" id="password-error">
+                  * Passwords do not match
+                </div>
+              </div>
+              <div>
+                <label for="confirm-password">CONFIRM PASSWORD</label>
+                <input
+                  type="password"
+                  name="confirm-password"
+                  id="confirm-password"
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <button type="submit" class="submit-button">Create Account</button>
+            <div class="login">
+              <span>Already have an account?</span
+              ><button type="button">Log in</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+  <script>
+    const form = document.getElementById('signup-form');
+    form.addEventListener('submit', (e) => {
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+
+      if (password !== confirmPassword) {
+        const passwordError = document.getElementById('password-error');
+        passwordError.style.display = 'inline-block';
+        e.preventDefault();
+      }
+    });
+  </script>
 </html>

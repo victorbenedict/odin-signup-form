@@ -1,158 +1,192 @@
 @font-face {
   font-family: 'Norse Bold';
-  src: url('https://cdn.statically.io/gh/TheOdinProject/theodinproject/efdc2888072f409e687d31dc580595dbe4fe0ff4/app/assets/fonts/Norse-Bold.otf') format('opentype');
+  src: url('https://cdn.statically.io/gh/TheOdinProject/theodinproject/efdc2888072f409e687d31dc580595dbe4fe0ff4/app/assets/fonts/Norse-Bold.otf')
+    format('opentype');
 }
 
+html,
 body {
-  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-	margin: 0;
-	padding: 0;
+  height: 100%;
+  margin: 0;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  display: flex;
+  flex-grow: 1;
+  font-family: sans-serif;
+}
+
+span {
+  white-space: pre;
 }
 
 a {
-  color: white; 
-  text-decoration: underline; 
+  color: white;
 }
 
-.container{
-	display: flex;
-	width: 100%;
+button:hover {
+  cursor: pointer;
 }
-
-.left{
-	width: 40%;
-	height: 100vh;
-	background-image: url('images/halie-west-25xggax4bSA-unsplash.jpg');
-	background-size: cover;
-}
-
-.left h1{
-	color: whitesmoke;
-	font-family: 'Norse Bold', sans-serif;
-	font-size: 120px;
-	position: relative;
-	top: 15vh;
-	background-color: rgb(0, 0, 0, 0.3);
-	text-align: center;
-	align-items: center;
-}
-
-.left h1 img{
-	height: 130px;
-	align-items: center;
-	position: relative;
-	top: 15px;
-}
-
-.left > div:last-child{
-	color: white;
-	position: absolute;
-  bottom: 0;
-	width: 40%;
-	text-align: center;
-}
-
-
-
-.right{
-	width: 60%;
-	height: 100vh;
-	background-color: rgb(240, 240, 240);
-}
-
-.right .top, form, .mid p, .bottom{
-	padding-left: 45px;
-}
-
-.right button{
-	padding: 13px;
-	color: white;
-	font-weight: 700;
-	font-size: 17px;
-	width: 230px;
-	/* height: 45px; */
-	background-color: #596D48;
-	border: 0;
-	border-radius: 7px;
-	box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.1);
-}
-
-.top{
-	font-size: 25px;
-	font-weight: 600;
-}
-.top:first-child{
-	padding-top: 45px;
-	margin-top: 0;
-}
-
-ul {
-	list-style-type: none;
-	padding: 0;
-}
-
-.bottom{
-	padding-top: 50px;
-}
-
-.right .bottom a{
-	font-weight: 700;
-	color: #596D48;
-	text-decoration: none;
-}
-
-form{
-	background-color: white;
-	font-size: 14px;
-	box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.1);
-	padding-bottom: 25px;
-}
-
-.mid p{
-	margin: 0;
-	background-color: white;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	font-size: 25px;
-	font-weight: 500;
-}	
-
-input[type="text"],
-input[type="email"],
-input[type="number"],
-input[type="password"] {
-  border: 1px solid rgba(0, 0, 0, 0.253);
-  border-radius: 5px;
-  padding: 10px;
-  width: 280px;
-	height: 30px;
-  box-sizing: border-box;
-}
-form div:not(:nth-child(3n)) {
-  display: inline-block;
-	margin-right: 70px;
-	margin-bottom: 20px;
-}
-
-form div:nth-child(3n){
-	display: block;
-}
-
-/* .inputFocused{
-	transform: scale(1.1);
+/* input:required {
+  border-color: red;
+  outline: red;
+} */
+/* input:invalid {
   border-color: blue;
-  box-shadow: 0 0 1rem rgba(0,0,0,0.1);
+  outline: blue;
 } */
 
-input[type=text]:focus, input[type=email]:focus, input[type=password]:focus, input[type="number"]:focus {
-  border: 2px solid rgba(0, 0, 255, 0.781);
-  outline: none;
-	box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.1)
+.title-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-image: url('https://images.unsplash.com/photo-1585202900225-6d3ac20a6962?q=80&w=987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
 }
 
-button:hover{
-	cursor: pointer;
-	box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.2)
+.title-section > :first-child {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+}
 
+.title-section .frame {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0 12px 0;
+  font-family: 'Norse Bold', sans-serif;
+  background-color: rgba(0, 0, 0, 0.5);
+  font-size: 6rem;
+  line-height: 1;
+}
 
+.logo {
+  height: 120px;
+}
+
+.title-section > :last-child {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 8px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.signup-section {
+  padding-top: 120px;
+  flex: 2;
+  background-color: rgb(249 250 251);
+}
+
+.description {
+  padding: 0 48px 80px 48px;
+  font-family: inherit;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+.description > :last-child {
+  padding-top: 32px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+form > div:first-child {
+  padding: 20px 48px 20px 48px;
+  background-color: white;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.01), 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form > div:last-child {
+  padding: 20px 48px 20px 48px;
+}
+
+form .title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: rgb(30 41 59);
+  font-weight: 600;
+}
+
+form .input-section {
+  display: grid;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 40px;
+  row-gap: 20px;
+}
+
+form .input-section > div {
+  width: 100%;
+}
+
+form label {
+  display: block;
+  color: rgb(30 41 59);
+  font-weight: 600;
+  font-size: 0.75rem; /* 12px */
+  line-height: 1rem; /* 16px */
+}
+
+form input {
+  width: 100%;
+  padding: 4px 10px 4px 10px;
+  border: 1px solid rgb(209 213 219);
+  border-radius: 0.25rem;
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+  box-sizing: border-box;
+}
+
+form input:focus {
+  border-color: blue;
+  outline: blue;
+}
+
+form .submit-button {
+  padding: 12px 48px 12px 48px;
+  color: white;
+  background-color: rgb(89, 109, 72);
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.01), 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  border-style: none;
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+  font-weight: 600;
+}
+
+.login {
+  padding-top: 32px;
+}
+
+.login > button {
+  color: rgb(89, 109, 72);
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+  font-weight: 600;
+  border-style: none;
+  background-color: white;
+}
+
+.password-error {
+  color: red;
+  font-size: 0.75rem; /* 12px */
+  line-height: 1rem; /* 16px */
+  display: none;
 }
