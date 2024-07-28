@@ -30,14 +30,11 @@ a {
 button:hover {
   cursor: pointer;
 }
-/* input:required {
-  border-color: red;
-  outline: red;
-} */
-/* input:invalid {
+
+input:invalid {
   border-color: blue;
   outline: blue;
-} */
+}
 
 .title-section {
   flex: 1;
